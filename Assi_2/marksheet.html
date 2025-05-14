@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marksheet Generator</title>
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Student Marksheet</h1>
+    <form id="marksheet-form">
+      <label>Student Name:</label>
+      <input type="text" id="student-name" required />
+
+      <label>Maths:</label>
+      <input type="number" id="maths" min="0" max="100" required />
+
+      <label>Science:</label>
+      <input type="number" id="science" min="0" max="100" required />
+
+      <label>English:</label>
+      <input type="number" id="english" min="0" max="100" required />
+
+      <label>Computer:</label>
+      <input type="number" id="computer" min="0" max="100" required />
+
+      <label>History:</label>
+      <input type="number" id="history" min="0" max="100" required />
+
+      <button type="button" onclick="generateMarksheet()">Generate</button>
+    </form>
+
+    <div id="output" class="result" style="display:none;">
+      <h2>Marksheet</h2>
+      <p><strong>Name:</strong> <span id="r-name"></span></p>
+      <p><strong>Total Marks:</strong> <span id="r-total"></span></p>
+      <p><strong>Percentage:</strong> <span id="r-percentage"></span>%</p>
+      <p><strong>Grade:</strong> <span id="r-grade"></span></p>
+    </div>
+  </div>
+
+  <script src="script3.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ID Card Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #deb40c;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: hwb(0 5% 0%);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      width: 100%;
+      font-weight: bold;
+      background-color: #3f0dac37;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .id-card {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background: #ffffff;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .id-card h3 {
+      margin-bottom: 10px;
+      color: #007BFF;
+    }
+
+    .id-card p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 style="text-align: center;">ID Card Generator</h2>
+  <form id="userForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="motherName">Mother's Name:</label>
+    <input type="text" id="motherName" name="motherName" required>
+
+    <button type="button" onclick="generateIDCard()">Generate ID Card</button>
+  </form>
+
+  <div class="id-card" id="idCard">
+    <h3>User ID Card</h3>
+    <p><strong>ID:</strong> <span id="displayId"></span></p>
+    <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="displayDob"></span></p>
+    <p><strong>Mother's Name:</strong> <span id="displayMother"></span></p>
+  </div>
+
+  <script>
+    function generateIDCard() {
+      const username = document.getElementById('username').value;
+      const dob = document.getElementById('dob').value;
+      const motherName = document.getElementById('motherName').value;
+
+      if (!username || !dob || !motherName) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const uniquePart = Math.random().toString(36).substr(2, 4).toUpperCase();
+      const id = ID - ${ username.substr(0, 3).toUpperCase()
+    }${ dob.replaceAll('-', '').substr(-4) } -${ uniquePart };
+
+    // Display the ID Card
+    document.getElementById('displayId').textContent = id;
+    document.getElementById('displayUsername').textContent = username;
+    document.getElementById('displayDob').textContent = dob;
+    document.getElementById('displayMother').textContent = motherName;
+    document.getElementById('idCard').style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>
